@@ -1,0 +1,56 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:table="sap.ui.table" xmlns:unified="sap.ui.unified" xmlns="sap.m" xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" controllerName="com.flexso.HackTheFuture.controller.Main">
+	<App>
+		<pages>
+			<Page title="Hack the future 2018">
+				<content>
+				<Table noDataText="Drop column list items here and columns in the area above" id="table0" items="{signModel>/signs}">
+				    <columns>
+				        <Column id="column0">
+				            <header>
+				                <Label text="artifact_id" id="label0"/>
+				            </header>
+				        </Column>
+				        <Column id="column1">
+				            <header>
+				                <Label text="longitude" id="label1"/>
+				            </header>
+				        </Column>
+				        <Column id="column2">
+				            <header>
+				                <Label text="latitude" id="label2"/>
+				            </header>
+				        </Column>
+				        <Column id="column3">
+				            <header>
+				                <Label text="signal" id="label3"/>
+				            </header>
+				        </Column>
+				        </columns>
+				        <items>
+				        <ColumnListItem>
+				        	<cells>
+				        		<Text
+				        		text="{signModel>artifact_id}"/>
+				        			<Text
+				        		text="{signModel>longitude}"/>
+				        			<Text
+				        		text="{signModel>latitude}"/>
+				        		<Button text="Decrypt" press="triggerML" app:coords="{signModel>artifact_signal}"/>
+
+				        	</cells>
+				        </ColumnListItem>
+				        	
+				        </items>
+				        </Table>
+					
+				</content>
+				<footer>
+					<Toolbar width="100%">
+						<content>
+						</content>
+					</Toolbar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
